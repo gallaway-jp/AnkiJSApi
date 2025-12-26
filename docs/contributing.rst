@@ -13,7 +13,7 @@ Getting Started
 
    .. code-block:: bash
 
-      git clone https://github.com/yourusername/AnkiJSApi.git
+      git clone https://github.com/gallaway-jp/AnkiJSApi.git
       cd AnkiJSApi
 
 3. Create a virtual environment and install dependencies:

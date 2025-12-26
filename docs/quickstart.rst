@@ -157,7 +157,7 @@ Learn More
 
 - :ref:`examples` - More complete card template examples
 - :ref:`api-reference` - Full API documentation
-- `CONTRIBUTING.md <https://github.com/yourusername/ankidroid-js-api-desktop/blob/main/CONTRIBUTING.md>`_ - Contribute to the project
+- `CONTRIBUTING.md <https://github.com/gallaway-jp/AnkiJSApi/blob/main/CONTRIBUTING.md>`_ - Contribute to the project
 
 Troubleshooting
 ---------------
@@ -183,5 +183,5 @@ Need Help?
 ~~~~~~~~~~
 
 - See :ref:`faq` for common questions
-- Check `GitHub Issues <https://github.com/yourusername/ankidroid-js-api-desktop/issues>`_
+- Check `GitHub Issues <https://github.com/gallaway-jp/AnkiJSApi/issues>`_
 - Read the full :ref:`api-reference`

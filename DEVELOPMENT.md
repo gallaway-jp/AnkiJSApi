@@ -14,8 +14,8 @@ This guide covers development setup, testing, and building the AnkiDroid JS API 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/ankidroid-js-api-desktop.git
-cd ankidroid-js-api-desktop
+git clone https://github.com/gallaway-jp/AnkiJSApi.git
+cd AnkiJSApi
 ```
 
 ### 2. Create Virtual Environment

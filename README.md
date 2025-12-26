@@ -6,6 +6,8 @@
 
 A desktop Anki add-on that brings AnkiDroid's powerful JavaScript template API to Anki Desktop, enabling advanced interactive card templates with programmatic control over the reviewer, TTS, card actions, and more.
 
+**Tags:** javascript api ankidroid templates tts interactive programming developer mobile-compatibility text-to-speech card-templates reviewer-control
+
 ## Features
 
 This add-on implements the AnkiDroidJS API for desktop Anki, providing:
@@ -61,14 +63,14 @@ This add-on requires **Anki Desktop** to be installed separately. It is designed
 
 ## Installation
 
-### From AnkiWeb (Coming Soon)
+### From AnkiWeb
 1. Open Anki Desktop
 2. Go to Tools → Add-ons → Get Add-ons
-3. Enter code: `XXXXXXXXX`
+3. Enter code: `1035866113`
 4. Restart Anki
 
 ### Manual Installation
-1. Download the latest release from [GitHub Releases](https://github.com/yourusername/ankidroid-js-api-desktop/releases)
+1. Download the latest release from [GitHub Releases](https://github.com/gallaway-jp/AnkiJSApi/releases)
 2. Open Anki Desktop
 3. Go to Tools → Add-ons → Install from file
 4. Select the downloaded `.ankiaddon` file
@@ -264,7 +266,7 @@ For detailed license compliance information, see [LICENSE_COMPLIANCE.md](docs/LI
 ## Support
 
 If you encounter any issues or have questions:
-- Open an issue on [GitHub Issues](https://github.com/yourusername/ankidroid-js-api-desktop/issues)
+- Open an issue on [GitHub Issues](https://github.com/gallaway-jp/AnkiJSApi/issues)
 - Check the [documentation](docs/)
 - Join the discussion on [Anki Forums](https://forums.ankiweb.net/)
 

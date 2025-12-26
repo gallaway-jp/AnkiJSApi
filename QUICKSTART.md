@@ -6,7 +6,7 @@ Get started with the AnkiDroid JS API for Desktop in 5 minutes!
 
 ### Option A: Manual Installation (Recommended for now)
 
-1. Download the latest release from [GitHub Releases](https://github.com/yourusername/ankidroid-js-api-desktop/releases)
+1. Download the latest release from [GitHub Releases](https://github.com/gallaway-jp/AnkiJSApi/releases)
 2. Open Anki Desktop
 3. Go to **Tools → Add-ons → Install from file**
 4. Select the downloaded `.ankiaddon` file
@@ -259,7 +259,7 @@ await api.ankiSetNoteTags(["vocabulary", "lesson-1", "important"]);
 
 - 📖 [Full Documentation](README.md)
 - 💡 [FAQ](docs/FAQ.md)
-- 🐛 [Report Issues](https://github.com/yourusername/ankidroid-js-api-desktop/issues)
+- 🐛 [Report Issues](https://github.com/gallaway-jp/AnkiJSApi/issues)
 - 🤝 [Contribute](CONTRIBUTING.md)
 
 Happy learning! 🎉

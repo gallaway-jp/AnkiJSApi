@@ -179,7 +179,7 @@ Links
 
 - `GitHub Repository <https://github.com/gallaway-jp/AnkiJSApi>`_
 - `Issue Tracker <https://github.com/gallaway-jp/AnkiJSApi/issues>`_
-- `AnkiWeb Page <https://ankiweb.net/shared/info/XXXXXXX>`_ (TBD)
+- `AnkiWeb Page <https://ankiweb.net/shared/info/1035866113>`_
 - `Documentation <https://ankidroid-js-api.readthedocs.io/>`_ (TBD)
 
 .. note::

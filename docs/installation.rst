@@ -30,7 +30,7 @@ Once published to AnkiWeb:
 Method 2: Manual Installation from Release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Download the latest ``.ankiaddon`` file from `GitHub Releases <https://github.com/yourusername/ankidroid-js-api-desktop/releases>`_
+1. Download the latest ``.ankiaddon`` file from `GitHub Releases <https://github.com/gallaway-jp/AnkiJSApi/releases>`_
 
 2. Open Anki Desktop
 
@@ -54,8 +54,8 @@ Windows
 
    .. code-block:: powershell
 
-      git clone https://github.com/yourusername/ankidroid-js-api-desktop.git
-      cd ankidroid-js-api-desktop
+      git clone https://github.com/gallaway-jp/AnkiJSApi.git
+      cd AnkiJSApi
 
 2. Create a symbolic link to Anki's add-ons folder:
 
@@ -72,8 +72,8 @@ macOS
 
    .. code-block:: bash
 
-      git clone https://github.com/yourusername/ankidroid-js-api-desktop.git
-      cd ankidroid-js-api-desktop
+      git clone https://github.com/gallaway-jp/AnkiJSApi.git
+      cd AnkiJSApi
 
 2. Create a symbolic link:
 
@@ -90,8 +90,8 @@ Linux
 
    .. code-block:: bash
 
-      git clone https://github.com/yourusername/ankidroid-js-api-desktop.git
-      cd ankidroid-js-api-desktop
+      git clone https://github.com/gallaway-jp/AnkiJSApi.git
+      cd AnkiJSApi
 
 2. Create a symbolic link:
 
