@@ -1,0 +1,4 @@
+# file: D:\Development\Python\AnkiJSApi\src\ankidroid_js_api\constants.py
+# hypothesis_version: 6.148.8
+
+[0.5, 2.0, 300.0, 3600.0, -365, 100, 175, 500, 1024, 2000, 2500, 3650, 10000, 'blue', 'green', 'none', 'orange', 'pink', 'purple', 'red', 'turquoise']

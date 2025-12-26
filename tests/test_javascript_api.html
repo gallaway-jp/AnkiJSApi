@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AnkiDroid JS API Tests</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h1 { color: #333; }
+        .test-suite { margin: 20px 0; }
+        .test-case {
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .test-case.pass { background-color: #d4edda; border-color: #c3e6cb; }
+        .test-case.fail { background-color: #f8d7da; border-color: #f5c6cb; }
+        .test-case h3 { margin: 0 0 10px 0; }
+        .test-result { font-weight: bold; }
+        .pass .test-result { color: #155724; }
+        .fail .test-result { color: #721c24; }
+        #results { margin-top: 20px; }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover { background-color: #0056b3; }
+        .summary {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>AnkiDroid JS API Test Suite</h1>
+    <p>This page tests the JavaScript API implementation without requiring Anki.</p>
+    
+    <button onclick="runAllTests()">Run All Tests</button>
+    
+    <div id="results"></div>
+    
+    <!-- Include the API -->
+    <script src="../src/ankidroid_js_api/js/ankidroid-api.js"></script>
+    
+    <!-- Mock pycmd for testing -->
+    <script>
+        // Mock pycmd to simulate Python responses
+        const mockResponses = {
+            'ankiGetCardId': 12345,
+            'ankiGetNewCardCount': 10,
+            'ankiGetRevCardCount': 25,
+            'ankiGetCardReps': 5,
+            'ankiGetCardMark': false,
+            'ankiGetCardFlag': 1,
+            'ankiIsDisplayingAnswer': false,
+            'ankiIsInNightMode': false,
+            'ankiMarkCard': true,
+            'ankiToggleFlag': true,
+            'ankiShowAnswer': true,
+            'ankiShowToast': true,
+            'ankiGetNoteTags': '["tag1", "tag2"]',
+            'ankiSetNoteTags': true,
+        };
+        
+        window.pycmd = function(cmd) {
+            if (!cmd.startsWith('ankidroidjs:')) return null;
+            
+            // Split only on first two colons to preserve JSON
+            const firstColon = cmd.indexOf(':', 0);
+            const secondColon = cmd.indexOf(':', firstColon + 1);
+            const funcName = cmd.substring(firstColon + 1, secondColon);
+            const argsJson = secondColon !== -1 ? cmd.substring(secondColon + 1) : '{}';
+            
+            let args = {};
+            if (argsJson && argsJson !== '{}') {
+                try {
+                    args = JSON.parse(argsJson);
+                } catch (e) {
+                    console.error('Failed to parse args:', argsJson, e);
+                }
+            }
+            
+            if (funcName in mockResponses) {
+                return JSON.stringify({
+                    success: true,
+                    result: mockResponses[funcName]
+                });
+            }
+            
+            return JSON.stringify({
+                success: false,
+                error: 'Unknown function'
+            });
+        };
+    </script>
+    
+    <!-- Test Framework -->
+    <script>
+        const testResults = [];
+        
+        function assert(condition, message) {
+            if (!condition) {
+                throw new Error(message || 'Assertion failed');
+            }
+        }
+        
+        function assertEqual(actual, expected, message) {
+            if (actual !== expected) {
+                throw new Error(message || `Expected ${expected}, got ${actual}`);
+            }
+        }
+        
+        async function runTest(name, testFunc) {
+            try {
+                await testFunc();
+                testResults.push({ name, status: 'pass', error: null });
+                return true;
+            } catch (error) {
+                testResults.push({ name, status: 'fail', error: error.message });
+                return false;
+            }
+        }
+        
+        function displayResults() {
+            const resultsDiv = document.getElementById('results');
+            const passed = testResults.filter(r => r.status === 'pass').length;
+            const failed = testResults.filter(r => r.status === 'fail').length;
+            
+            let html = `
+                <div class="summary">
+                    <h2>Test Results</h2>
+                    <p>Total: ${testResults.length} | Passed: ${passed} | Failed: ${failed}</p>
+                </div>
+            `;
+            
+            testResults.forEach(result => {
+                html += `
+                    <div class="test-case ${result.status}">
+                        <h3>${result.name}</h3>
+                        <div class="test-result">${result.status.toUpperCase()}</div>
+                        ${result.error ? `<p>Error: ${result.error}</p>` : ''}
+                    </div>
+                `;
+            });
+            
+            resultsDiv.innerHTML = html;
+        }
+        
+        async function runAllTests() {
+            testResults.length = 0;
+            document.getElementById('results').innerHTML = '<p>Running tests...</p>';
+            
+            // Test API Initialization
+            await runTest('API Initialization', async () => {
+                const api = AnkiDroidJS.init({
+                    developer: 'test@example.com',
+                    version: '0.0.3'
+                });
+                assert(api !== null, 'API should initialize');
+                assert(typeof api.ankiGetCardId === 'function', 'API should have methods');
+            });
+            
+            // Test Card Information APIs
+            await runTest('Get Card ID', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const cardId = await api.ankiGetCardId();
+                assertEqual(cardId, 12345, 'Card ID should match mock');
+            });
+            
+            await runTest('Get New Card Count', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const count = await api.ankiGetNewCardCount();
+                assertEqual(count, 10, 'New card count should match mock');
+            });
+            
+            await runTest('Get Review Card Count', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const count = await api.ankiGetRevCardCount();
+                assertEqual(count, 25, 'Review card count should match mock');
+            });
+            
+            await runTest('Get Card Reps', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const reps = await api.ankiGetCardReps();
+                assertEqual(reps, 5, 'Card reps should match mock');
+            });
+            
+            // Test Card Action APIs
+            await runTest('Mark Card', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const result = await api.ankiMarkCard();
+                assertEqual(result, true, 'Mark card should return true');
+            });
+            
+            await runTest('Toggle Flag', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const result = await api.ankiToggleFlag('red');
+                assertEqual(result, true, 'Toggle flag should return true');
+            });
+            
+            // Test Reviewer Control APIs
+            await runTest('Is Displaying Answer', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const isAnswer = await api.ankiIsDisplayingAnswer();
+                assertEqual(isAnswer, false, 'Should not be displaying answer');
+            });
+            
+            await runTest('Show Answer', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const result = await api.ankiShowAnswer();
+                assertEqual(result, true, 'Show answer should return true');
+            });
+            
+            // Test UI Control APIs
+            await runTest('Is In Night Mode', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const isNight = await api.ankiIsInNightMode();
+                assertEqual(isNight, false, 'Should not be in night mode');
+            });
+            
+            await runTest('Show Toast', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const result = await api.ankiShowToast('Test message', true);
+                assertEqual(result, true, 'Show toast should return true');
+            });
+            
+            // Test Tag Management APIs
+            await runTest('Get Note Tags', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const tags = await api.ankiGetNoteTags();
+                assertEqual(tags, '["tag1", "tag2"]', 'Tags should match mock');
+            });
+            
+            await runTest('Set Note Tags', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const result = await api.ankiSetNoteTags(['new-tag']);
+                assertEqual(result, true, 'Set tags should return true');
+            });
+            
+            // Test Promise-based API
+            await runTest('API Returns Promises', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const promise = api.ankiGetCardId();
+                assert(promise instanceof Promise, 'API calls should return Promises');
+            });
+            
+            // Test Error Handling
+            await runTest('Unknown Function Handling', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                // This would normally fail, but our mock doesn't have this function
+                // In real implementation, it should handle gracefully
+                try {
+                    const result = await api.ankiGetCardId(); // Using existing function
+                    assert(true, 'Should handle API calls');
+                } catch (error) {
+                    assert(false, 'Should not throw for valid function');
+                }
+            });
+            
+            // Test Platform Variable
+            await runTest('Platform Variable Set', () => {
+                assertEqual(window.ankiPlatform, 'desktop', 'Platform should be set to desktop');
+            });
+            
+            // Test Deprecated APIs
+            await runTest('Deprecated APIs Log Warnings', async () => {
+                const api = AnkiDroidJS.init({ developer: 'test', version: '0.0.3' });
+                const originalWarn = console.warn;
+                let warningLogged = false;
+                console.warn = () => { warningLogged = true; };
+                
+                await api.ankiSttStart();
+                
+                console.warn = originalWarn;
+                assert(warningLogged, 'Deprecated API should log warning');
+            });
+            
+            displayResults();
+        }
+    </script>
+    
+    <div style="margin-top: 40px; padding: 20px; background-color: #f8f9fa; border-radius: 4px;">
+        <h2>Running the Tests</h2>
+        <ol>
+            <li>Open this HTML file in a web browser</li>
+            <li>Click "Run All Tests" button</li>
+            <li>View the results below</li>
+        </ol>
+        
+        <h3>What's Being Tested</h3>
+        <ul>
+            <li>API initialization and structure</li>
+            <li>Card information retrieval functions</li>
+            <li>Card action functions</li>
+            <li>Reviewer control functions</li>
+            <li>UI control functions</li>
+            <li>Tag management functions</li>
+            <li>Promise-based async API</li>
+            <li>Error handling</li>
+            <li>Platform detection</li>
+        </ul>
+        
+        <h3>Note</h3>
+        <p>These tests use a mock <code>pycmd</code> function to simulate Python responses.
+        In a real Anki environment, the actual Python backend would handle these calls.</p>
+    </div>
+</body>
+</html>

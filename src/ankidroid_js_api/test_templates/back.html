@@ -1,0 +1,99 @@
+<!-- API Test Card - Back Template -->
+<div style="display: none;">{{FrontSide}}</div>
+
+<style>
+body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+.section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 8px; }
+.section h3 { margin-top: 0; color: #4a90e2; }
+button { margin: 5px; padding: 8px 12px; cursor: pointer; border-radius: 4px; border: 1px solid #4a90e2; background: white; }
+button:hover { background: #e6f2ff; }
+.output { margin-top: 10px; padding: 10px; background: #f5f5f5; border-radius: 4px; font-family: monospace; font-size: 12px; max-height: 200px; overflow-y: auto; }
+.success { color: green; }
+.error { color: red; }
+.answer-box { background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center; }
+@media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #e0e0e0; }
+    .section { border-color: #444; background: #2a2a2a; }
+    button { background: #333; color: #e0e0e0; border-color: #555; }
+    button:hover { background: #444; }
+    .output { background: #1e1e1e; color: #d0d0d0; }
+    .answer-box { background: #1e3a1e; }
+}
+</style>
+
+<div style="text-align: center; margin-bottom: 30px;">
+    <h1>AnkiDroid JS API Test Card</h1>
+    <p>Back Side - Test answer-specific APIs</p>
+</div>
+
+<div class="answer-box">
+    <h2>Answer: {{Back}}</h2>
+</div>
+
+<script>
+// Re-initialize API on back side
+var jsApiContract = { version: "0.0.3", developer: "test@example.com" };
+try { window.api = new AnkiDroidJS(jsApiContract); } catch (e) { window.api = null; }
+
+function log(section, message, isError) {
+    const output = document.getElementById(section + '-output');
+    if (!output) return;
+    const div = document.createElement('div');
+    div.className = isError ? 'error' : 'success';
+    div.textContent = new Date().toLocaleTimeString() + ': ' + message;
+    output.appendChild(div);
+    output.scrollTop = output.scrollHeight;
+}
+
+function testApi(section, apiName, apiCall) {
+    log(section, 'Testing ' + apiName + '...');
+    try {
+        const result = apiCall();
+        if (result && typeof result.then === 'function') {
+            result.then(function(res) {
+                log(section, apiName + ' → ' + JSON.stringify(res));
+            }).catch(function(err) {
+                log(section, apiName + ' ERROR: ' + err.message, true);
+            });
+        } else {
+            log(section, apiName + ' → ' + JSON.stringify(result));
+        }
+    } catch (e) {
+        log(section, apiName + ' ERROR: ' + e.message, true);
+    }
+}
+</script>
+
+<!-- Answer Side Tests -->
+<div class="section">
+    <h3>Answer Side - Reviewer Control</h3>
+    <button onclick="testApi('answer', 'ankiIsDisplayingAnswer', () => api.ankiIsDisplayingAnswer())">Is Displaying Answer?</button>
+    <button onclick="testApi('answer', 'buttonAnswerEase1', () => buttonAnswerEase1())">Answer: Again (1)</button>
+    <button onclick="testApi('answer', 'buttonAnswerEase2', () => buttonAnswerEase2())">Answer: Hard (2)</button>
+    <button onclick="testApi('answer', 'buttonAnswerEase3', () => buttonAnswerEase3())">Answer: Good (3)</button>
+    <button onclick="testApi('answer', 'buttonAnswerEase4', () => buttonAnswerEase4())">Answer: Easy (4)</button>
+    <div id="answer-output" class="output"></div>
+    <p style="color: #666; font-size: 12px;">⚠️ Clicking answer buttons will advance to next card!</p>
+</div>
+
+<!-- Repeat front side tests that should also work on back -->
+<div class="section">
+    <h3>Card Information (Back Side)</h3>
+    <button onclick="testApi('back-info', 'ankiGetCardMark', () => api.ankiGetCardMark())">Card Mark</button>
+    <button onclick="testApi('back-info', 'ankiGetCardFlag', () => api.ankiGetCardFlag())">Card Flag</button>
+    <button onclick="testApi('back-info', 'ankiGetCardFactor', () => api.ankiGetCardFactor())">Ease Factor</button>
+    <button onclick="testApi('back-info', 'ankiGetDebugInfo', () => api.ankiGetDebugInfo())">Debug Info</button>
+    <div id="back-info-output" class="output"></div>
+</div>
+
+<div class="section">
+    <h3>TTS (Back Side)</h3>
+    <button onclick="testApi('back-tts', 'ankiTtsSpeak(Back)', () => api.ankiTtsSpeak('This is the back side.'))">Speak</button>
+    <button onclick="testApi('back-tts', 'ankiTtsStop', () => api.ankiTtsStop())">Stop</button>
+    <div id="back-tts-output" class="output"></div>
+</div>
+
+<div style="text-align: center; margin-top: 30px; padding: 20px; background: #fff3cd; border-radius: 8px;">
+    <p style="margin: 0; color: #856404;"><strong>Test Complete!</strong></p>
+    <p style="margin: 10px 0 0 0; color: #856404;">Click an answer button above to continue to the next card</p>
+</div>

@@ -1,0 +1,12 @@
+{
+    "package": "ankidroid_js_api",
+    "name": "AnkiDroid JS API for Desktop",
+    "human_version": "1.0.0",
+    "mod": 0,
+    "min_point_version": 50,
+    "max_point_version": 0,
+    "branch_index": 0,
+    "author": "AnkiDroid JS API Contributors",
+    "homepage": "https://github.com/yourusername/ankidroid-js-api-desktop",
+    "conflicts": []
+}

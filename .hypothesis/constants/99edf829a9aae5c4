@@ -1,0 +1,4 @@
+# file: D:\Development\Python\AnkiJSApi\src\ankidroid_js_api\reviewer_control.py
+# hypothesis_version: 6.148.8
+
+['_answerCard', '_linkHandler', '_showAnswer', 'ankiShowAnswer', 'answer', 'available_methods', 'card_id', 'error', 'has__answerCard', 'has__linkHandler', 'has__showAnswer', 'has_on_answer_button', 'has_on_show_answer', 'on_answer_button', 'on_show_answer', 'question', 'state']

@@ -1,0 +1,4 @@
+# file: D:\Development\Python\AnkiJSApi\src\ankidroid_js_api\tts_control.py
+# hypothesis_version: 6.148.8
+
+[1.0, 'ankiTtsIsSpeaking', 'ankiTtsSetLanguage', 'ankiTtsSetPitch', 'ankiTtsSetSpeechRate', 'ankiTtsSpeak', 'ankiTtsSpeak_error', 'ankiTtsStop', 'en-US', 'enabled', 'error', 'language_code', 'pitch', 'queue_mode', 'rate', 'text', 'text_length', 'tts']

@@ -1,0 +1,4 @@
+# file: D:\Development\Python\AnkiJSApi\src\ankidroid_js_api\card_actions.py
+# hypothesis_version: 6.148.8
+
+[500, 'Browser', 'Failed to bury card', 'ankiBuryCard', 'ankiBuryNote', 'ankiMarkCard', 'ankiResetProgress', 'ankiSearchCard', 'ankiSetCardDue', 'ankiSuspendCard', 'ankiSuspendNote', 'ankiToggleFlag', 'days', 'flag_color', 'int | str', 'marked', 'query', 'requireReset']

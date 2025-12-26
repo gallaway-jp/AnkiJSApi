@@ -1,0 +1,4 @@
+# file: D:\Development\Python\AnkiJSApi\src\ankidroid_js_api\constants\security.py
+# hypothesis_version: 6.148.8
+
+[300.0, 3600.0, 100, 500, 1024, 10000]

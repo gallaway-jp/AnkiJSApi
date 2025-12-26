@@ -1,0 +1,4 @@
+# file: D:\Development\Python\AnkiJSApi\src\ankidroid_js_api\card_info.py
+# hypothesis_version: 6.148.8
+
+[30.44, 1440, 86400, '::', '_answerButtonList', 'ankiGetCardDid', 'ankiGetCardDue', 'ankiGetCardFactor', 'ankiGetCardFlag', 'ankiGetCardId', 'ankiGetCardInterval', 'ankiGetCardLapses', 'ankiGetCardLeft', 'ankiGetCardMark', 'ankiGetCardMod', 'ankiGetCardNid', 'ankiGetCardQueue', 'ankiGetCardReps', 'ankiGetCardType', 'ankiGetDeckName', 'ankiGetETA', 'ankiGetLrnCardCount', 'ankiGetNewCardCount', 'ankiGetRevCardCount', 'did', 'due', 'factor', 'flags', 'id', 'interval', 'ivl', 'lapses', 'marked', 'mod', 'nid', 'queue', 'reps', 'scheduled_days', 'states', 'type']

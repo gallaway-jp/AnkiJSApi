@@ -1,0 +1,4 @@
+# file: D:\Development\Python\AnkiJSApi\src\ankidroid_js_api\security.py
+# hypothesis_version: 6.148.8
+
+[1.0, '"query":"[REDACTED]"', '"query":\\s*"[^"]*"', '"tags":"[REDACTED]"', '"tags":\\s*\\[[^\\]]*\\]', '"text":"[REDACTED]"', '"text":\\s*"[^"]*"', '..', '...', '/', 'File "\\1"', 'Tag cannot be empty', 'Tag must be a string', '\\', '^-?\\d+$', '^[\\w\\-]+$', '^[\\w\\-]+\\.\\w+$', '_', 'utf-8']

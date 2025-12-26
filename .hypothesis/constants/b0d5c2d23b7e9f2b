@@ -1,0 +1,4 @@
+# file: D:\Development\Python\AnkiJSApi\src\ankidroid_js_api\tts_strategies.py
+# hypothesis_version: 6.148.8
+
+[1.0, -100, 100, "'", "''", '-Command', '-i', '-p', '-r', '-s', 'Darwin', 'Linux', 'Windows', 'ascii', 'en-US', 'espeak', 'killall', 'powershell', 'say', 'spd-say', 'utf-16le']

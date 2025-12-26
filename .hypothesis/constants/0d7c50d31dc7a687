@@ -1,0 +1,4 @@
+# file: D:\Development\Python\AnkiJSApi\src\ankidroid_js_api\ui_control.py
+# hypothesis_version: 6.148.8
+
+['ankiIsInFullscreen', 'ankiIsInNightMode', 'ankiIsTopbarShown', 'ankiShowOptionsMenu', 'ankiShowToast', 'deckBrowser', 'enabled', 'short_length', 'text', 'toast_duration_ms', 'ui']

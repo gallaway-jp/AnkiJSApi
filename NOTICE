@@ -1,0 +1,78 @@
+AnkiDroid JS API Desktop
+========================
+
+Copyright (c) 2025 AnkiDroid JS API Desktop Contributors
+
+This software is licensed under the MIT License. See the LICENSE file for details.
+
+
+THIRD-PARTY SOFTWARE
+--------------------
+
+This add-on is designed to extend Anki Desktop, a spaced repetition flashcard program.
+
+Anki Desktop
+  Copyright © Ankitects Pty Ltd and contributors
+  Licensed under the GNU Affero General Public License v3.0 (AGPL-3.0)
+  Website: https://apps.ankiweb.net/
+
+  NOTE: This add-on is a plugin/extension for Anki Desktop and is NOT subject
+  to Anki's AGPL license. Per Anki's plugin policy, add-ons may use any license.
+  Anki is NOT distributed with this software and must be installed separately.
+
+
+PYTHON STANDARD LIBRARY
+------------------------
+
+This software uses the Python Standard Library, which is licensed under the
+Python Software Foundation License (PSF). The Python Standard Library is
+distributed with Python and is not included in this package.
+
+
+DEVELOPMENT DEPENDENCIES
+-------------------------
+
+The following tools are used during development and testing but are NOT
+included in the distributed add-on package:
+
+Testing:
+  - pytest (MIT)
+  - pytest-cov (MIT)
+  - pytest-mock (MIT)
+  - pytest-benchmark (BSD-2-Clause)
+  - pytest-xdist (MIT)
+  - hypothesis (MPL-2.0)
+
+Code Quality:
+  - black (MIT)
+  - mypy (MIT)
+  - pylint (GPL-2.0)
+  - flake8 (MIT)
+
+Documentation:
+  - sphinx (BSD-2-Clause)
+  - sphinx-rtd-theme (MIT)
+
+Build Tools:
+  - setuptools (MIT)
+  - wheel (MIT)
+  - twine (Apache-2.0)
+
+See requirements-dev.txt for specific version requirements.
+
+
+ATTRIBUTION
+-----------
+
+This project was inspired by AnkiDroid's JavaScript API and aims to bring
+similar functionality to Anki Desktop users.
+
+Special thanks to:
+  - The Anki and AnkiDroid development teams
+  - All contributors to this project
+  - The open-source community
+
+
+For more information about licenses and compliance, see:
+  - LICENSE file in this repository
+  - docs/LICENSE_COMPLIANCE.md for detailed license review

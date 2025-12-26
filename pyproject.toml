@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=65.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ankidroid-js-api-desktop"
+version = "1.0.0"
+description = "Brings AnkiDroid's JavaScript API to Anki Desktop"
+readme = "README.md"
+authors = [
+    {name = "AnkiDroid JS API Contributors"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Education",
+]
+keywords = ["anki", "ankidroid", "addon", "flashcards", "spaced-repetition"]
+requires-python = ">=3.9"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/ankidroid-js-api-desktop"
+Documentation = "https://github.com/yourusername/ankidroid-js-api-desktop/blob/main/README.md"
+Repository = "https://github.com/yourusername/ankidroid-js-api-desktop"
+Issues = "https://github.com/yourusername/ankidroid-js-api-desktop/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-mock>=3.10.0",
+    "black>=22.0.0",
+    "mypy>=0.990",
+    "pylint>=2.15.0",
+    "flake8>=6.0.0",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311"]
+include = '\.pyi?$'
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+
+[tool.pylint.messages_control]
+max-line-length = 100
+disable = [
+    "C0103",  # Invalid name
+    "C0114",  # Missing module docstring
+    "R0913",  # Too many arguments
+    "R0903",  # Too few public methods
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v"
+markers = [
+    "integration: marks tests as integration tests that require Anki installation (deselect with '-m \"not integration\"')",
+]

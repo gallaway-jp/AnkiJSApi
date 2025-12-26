@@ -1,0 +1,29 @@
+{
+    "_comment_1": "AnkiDroid JS API Configuration",
+    "_comment_2": "For production, set debug_mode and log_api_calls to false",
+    
+    "enabled": true,
+    "debug_mode": false,
+    "log_api_calls": false,
+    
+    "tts": {
+        "_comment": "Text-to-Speech settings (uses system TTS)",
+        "enabled": true,
+        "default_language": "en-US",
+        "default_rate": 1.0,
+        "default_pitch": 1.0
+    },
+    
+    "ui": {
+        "_comment": "UI customization",
+        "show_toast_notifications": true,
+        "toast_duration_ms": 2000
+    },
+    
+    "_troubleshooting": {
+        "_comment": "If APIs not working:",
+        "_step1": "Enable debug_mode and log_api_calls above",
+        "_step2": "Check Tools -> Add-ons -> AnkiDroid JS API -> View Files -> stderr.txt",
+        "_step3": "Verify JavaScript console in card template (F12)"
+    }
+}

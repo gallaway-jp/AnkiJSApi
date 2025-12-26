@@ -1,0 +1,4 @@
+# file: D:\Development\Python\AnkiJSApi\src\ankidroid_js_api\tag_manager.py
+# hypothesis_version: 6.148.8
+
+[100, '_', 'ankiAddTagToNote', 'ankiGetNoteTags', 'ankiSetNoteTags', 'tag', 'tags']

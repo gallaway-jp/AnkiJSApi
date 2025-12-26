@@ -1,0 +1,4 @@
+# file: D:\Development\Python\AnkiJSApi\src\ankidroid_js_api\tts_control.py
+# hypothesis_version: 6.148.8
+
+[1.0, 127, 175, 450, 1000, 134217728, "'", "''", '--', '--tts', '-Command', '-ExecutionPolicy', '-NoProfile', '-r', '-s', 'Bypass', 'Darwin', 'Linux', 'No TTS engine found', 'Windows', 'ankiTtsIsSpeaking', 'ankiTtsSetLanguage', 'ankiTtsSetPitch', 'ankiTtsSetSpeechRate', 'ankiTtsSpeak', 'ankiTtsSpeak_error', 'ankiTtsStop', 'ascii', 'en-US', 'enabled', 'error', 'espeak', 'espeak not found', 'festival', 'language_code', 'pitch', 'powershell', 'queue_mode', 'rate', 'say', 'system', 'text', 'text_length', 'tts', 'utf-16le', 'utf-8']
