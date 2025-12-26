@@ -170,7 +170,7 @@ async function markDifficult() {
 
 ## API Reference
 
-See [TEMPLATE_API_REFERENCE.md](TEMPLATE_API_REFERENCE.md) for complete API documentation.
+See the [API documentation](docs/api/index.rst) for complete reference, or browse the [full documentation](docs/).
 
 ## Compatibility
 
