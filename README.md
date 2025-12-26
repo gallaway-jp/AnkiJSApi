@@ -1,7 +1,7 @@
 # AnkiDroid JS API for Desktop
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://github.com/yourusername/ankidroid-js-api-desktop/workflows/Tests/badge.svg)](https://github.com/yourusername/ankidroid-js-api-desktop/actions)
+[![Tests](https://github.com/gallaway-jp/AnkiJSApi/workflows/Tests/badge.svg)](https://github.com/gallaway-jp/AnkiJSApi/actions)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
 A desktop Anki add-on that brings AnkiDroid's powerful JavaScript template API to Anki Desktop, enabling advanced interactive card templates with programmatic control over the reviewer, TTS, card actions, and more.
@@ -77,8 +77,8 @@ This add-on requires **Anki Desktop** to be installed separately. It is designed
 ### From Source
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/ankidroid-js-api-desktop.git
-   cd ankidroid-js-api-desktop
+   git clone https://github.com/gallaway-jp/AnkiJSApi.git
+   cd AnkiJSApi
    ```
 
 2. Create a symbolic link to your Anki addons folder:

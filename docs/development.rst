@@ -21,8 +21,8 @@ Initial Setup
 
 .. code-block:: bash
 
-   git clone https://github.com/RisingOrange/anki-smart-templates.git
-   cd ankidroid-js-api-desktop
+   git clone https://github.com/gallaway-jp/AnkiJSApi.git
+   cd AnkiJSApi
 
 2. Create Virtual Environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

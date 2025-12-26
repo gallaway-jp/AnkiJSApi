@@ -177,8 +177,8 @@ See :ref:`contributing` for guidelines on:
 Links
 -----
 
-- `GitHub Repository <https://github.com/RisingOrange/anki-smart-templates>`_
-- `Issue Tracker <https://github.com/RisingOrange/anki-smart-templates/issues>`_
+- `GitHub Repository <https://github.com/gallaway-jp/AnkiJSApi>`_
+- `Issue Tracker <https://github.com/gallaway-jp/AnkiJSApi/issues>`_
 - `AnkiWeb Page <https://ankiweb.net/shared/info/XXXXXXX>`_ (TBD)
 - `Documentation <https://ankidroid-js-api.readthedocs.io/>`_ (TBD)
 

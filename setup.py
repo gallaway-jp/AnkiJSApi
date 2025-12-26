@@ -68,7 +68,7 @@ setup(
     long_description_content_type="text/markdown",
     author="AnkiDroid JS API Contributors",
     author_email="",
-    url="https://github.com/yourusername/ankidroid-js-api-desktop",
+    url="https://github.com/gallaway-jp/AnkiJSApi",
     license="MIT",
     packages=find_packages(where="src"),
     package_dir={"": "src"},

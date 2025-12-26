@@ -15,8 +15,8 @@ Get started with the AnkiDroid JS API for Desktop in 5 minutes!
 ### Option B: From Source (for developers)
 
 ```bash
-git clone https://github.com/yourusername/ankidroid-js-api-desktop.git
-cd ankidroid-js-api-desktop
+git clone https://github.com/gallaway-jp/AnkiJSApi.git
+cd AnkiJSApi
 
 # Windows
 mklink /D "%APPDATA%\Anki2\addons21\ankidroid_js_api" "src\ankidroid_js_api"

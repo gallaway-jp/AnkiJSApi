@@ -277,4 +277,4 @@ Still Need Help?
 - Check the :ref:`installation` guide
 - Review :ref:`examples`
 - Read the :ref:`api-reference`
-- Open an issue on `GitHub <https://github.com/RisingOrange/anki-smart-templates>`_
+- Open an issue on `GitHub <https://github.com/gallaway-jp/AnkiJSApi>`_

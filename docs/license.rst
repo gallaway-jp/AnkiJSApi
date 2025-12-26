@@ -213,8 +213,8 @@ Full Compliance Report
 
 For a detailed analysis of all third-party dependencies, see:
 
-- `LICENSE_COMPLIANCE.md <https://github.com/RisingOrange/anki-smart-templates/blob/main/docs/LICENSE_COMPLIANCE.md>`_
-- `NOTICE <https://github.com/RisingOrange/anki-smart-templates/blob/main/NOTICE>`_ file
+- `LICENSE_COMPLIANCE.md <https://github.com/gallaway-jp/AnkiJSApi/blob/main/docs/LICENSE_COMPLIANCE.md>`_
+- `NOTICE <https://github.com/gallaway-jp/AnkiJSApi/blob/main/NOTICE>`_ file
 
 Redistribution Guidelines
 --------------------------
@@ -293,9 +293,9 @@ License Questions
 
 If you have questions about licensing:
 
-- Review the full `LICENSE <https://github.com/RisingOrange/anki-smart-templates/blob/main/LICENSE>`_ file
-- Read the `LICENSE_COMPLIANCE.md <https://github.com/RisingOrange/anki-smart-templates/blob/main/docs/LICENSE_COMPLIANCE.md>`_ document
-- Open an issue on `GitHub <https://github.com/RisingOrange/anki-smart-templates/issues>`_
+- Review the full `LICENSE <https://github.com/gallaway-jp/AnkiJSApi/blob/main/LICENSE>`_ file
+- Read the `LICENSE_COMPLIANCE.md <https://github.com/gallaway-jp/AnkiJSApi/blob/main/docs/LICENSE_COMPLIANCE.md>`_ document
+- Open an issue on `GitHub <https://github.com/gallaway-jp/AnkiJSApi/issues>`_
 
 .. note::
    This page is for informational purposes. The LICENSE file is the authoritative source for license terms.

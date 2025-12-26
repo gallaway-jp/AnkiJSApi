@@ -25,10 +25,10 @@ keywords = ["anki", "ankidroid", "addon", "flashcards", "spaced-repetition"]
 requires-python = ">=3.9"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/ankidroid-js-api-desktop"
-Documentation = "https://github.com/yourusername/ankidroid-js-api-desktop/blob/main/README.md"
-Repository = "https://github.com/yourusername/ankidroid-js-api-desktop"
-Issues = "https://github.com/yourusername/ankidroid-js-api-desktop/issues"
+Homepage = "https://github.com/gallaway-jp/AnkiJSApi"
+Documentation = "https://github.com/gallaway-jp/AnkiJSApi/blob/main/README.md"
+Repository = "https://github.com/gallaway-jp/AnkiJSApi"
+Issues = "https://github.com/gallaway-jp/AnkiJSApi/issues"
 
 [project.optional-dependencies]
 dev = [

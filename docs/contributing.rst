@@ -13,8 +13,8 @@ Getting Started
 
    .. code-block:: bash
 
-      git clone https://github.com/yourusername/ankidroid-js-api-desktop.git
-      cd ankidroid-js-api-desktop
+      git clone https://github.com/yourusername/AnkiJSApi.git
+      cd AnkiJSApi
 
 3. Create a virtual environment and install dependencies:
 
@@ -363,7 +363,7 @@ Code of Conduct
 - Focus on what's best for the project
 - Show empathy towards other contributors
 
-See our full `Code of Conduct <https://github.com/RisingOrange/anki-smart-templates/blob/main/CODE_OF_CONDUCT.md>`_.
+See our full `Code of Conduct <https://github.com/gallaway-jp/AnkiJSApi/blob/main/CODE_OF_CONDUCT.md>`_.
 
 Getting Help
 ------------
