@@ -219,7 +219,7 @@ class TestDocumentation:
     
     def test_installation_guide_exists(self):
         """Test that installation guide exists."""
-        assert Path("docs/INSTALLATION.md").exists()
+        assert Path("docs/installation.rst").exists()
 
 
 class TestJavaScriptAPI:
